@@ -17,9 +17,9 @@ Name:           mate-desktop
 License:        GPLv2+ and LGPLv2+ and MIT
 Version:        %{branch}.0
 %if 0%{?rel_build}
-Release:        2%{?dist}
+Release:        3%{?dist}
 %else
-Release:        0.2%{?git_rel}%{?dist}
+Release:        0.3%{?git_rel}%{?dist}
 %endif
 URL:            http://mate-desktop.org
 
@@ -57,9 +57,11 @@ Requires: mate-panel
 Requires: mate-notification-daemon
 Requires: mate-user-guide
 
+%if 0%{?fedora}
 # Need this to pull in the right imsettings in groupinstalls
 # See https://bugzilla.redhat.com/show_bug.cgi?id=1349743
 Suggests:  imsettings-mate
+%endif
 
 %if 0%{?fedora}
 Requires: xorg-x11-drv-synaptics
@@ -265,6 +267,9 @@ fi
 
 
 %changelog
+* Sat Jul 02 2016 Jajauma's Packages <jajauma@yandex.ru> - 1.15.0-3
+- Conditionally disable 'Suggests' section for RHEL
+
 * Thu Jun 30 2016 Wolfgang Ulbrich <chat-to-me@raveit.de> - 1.15.0-2
 - Add a Suggests imsettings-mate to workaround dnf issue. Bug #1349743
 
