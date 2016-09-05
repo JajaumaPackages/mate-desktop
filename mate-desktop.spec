@@ -15,9 +15,9 @@
 Summary:        Shared code for mate-panel, mate-session, mate-file-manager, etc
 Name:           mate-desktop
 License:        GPLv2+ and LGPLv2+ and MIT
-Version:        %{branch}.0
+Version:        %{branch}.1
 %if 0%{?rel_build}
-Release:        3%{?dist}
+Release:        1%{?dist}
 %else
 Release:        0.3%{?git_rel}%{?dist}
 %endif
@@ -267,6 +267,9 @@ fi
 
 
 %changelog
+* Mon Sep 05 2016 Jajauma's Packages <jajauma@yandex.ru> - 1.15.1-1
+- Update to latest upstream release
+
 * Sat Jul 02 2016 Jajauma's Packages <jajauma@yandex.ru> - 1.15.0-3
 - Conditionally disable 'Suggests' section for RHEL
 
