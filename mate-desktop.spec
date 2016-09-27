@@ -2,7 +2,7 @@
 %global rel_build 1
 
 # This is needed, because src-url contains branched part of versioning-scheme.
-%global branch 1.15
+%global branch 1.16
 
 # Settings used for build from snapshots.
 %{!?rel_build:%global commit a6a0a5879533b0915901ab69703eaf327bbca846 }
@@ -15,7 +15,7 @@
 Summary:        Shared code for mate-panel, mate-session, mate-file-manager, etc
 Name:           mate-desktop
 License:        GPLv2+ and LGPLv2+ and MIT
-Version:        %{branch}.1
+Version:        %{branch}.0
 %if 0%{?rel_build}
 Release:        1%{?dist}
 %else
@@ -267,6 +267,9 @@ fi
 
 
 %changelog
+* Tue Sep 27 2016 Jajauma's Packages <jajauma@yandex.ru> - 1.16.0-1
+- Update to latest upstream release
+
 * Mon Sep 05 2016 Jajauma's Packages <jajauma@yandex.ru> - 1.15.1-1
 - Update to latest upstream release
 
