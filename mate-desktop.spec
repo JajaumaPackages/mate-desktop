@@ -15,7 +15,7 @@
 Summary:        Shared code for mate-panel, mate-session, mate-file-manager, etc
 Name:           mate-desktop
 License:        GPLv2+ and LGPLv2+ and MIT
-Version:        %{branch}.0
+Version:        %{branch}.1
 %if 0%{?rel_build}
 Release:        1%{?dist}
 %else
@@ -153,6 +153,8 @@ NOCONFIGURE=1 ./autogen.sh
      --enable-gtk-doc-html                                 \
      --enable-introspection=yes
 
+sed -i 's|^hardcode_libdir_flag_spec=.*|hardcode_libdir_flag_spec=""|g' libtool
+sed -i 's|^runpath_var=LD_RUN_PATH|runpath_var=DIE_RPATH_DIE|g' libtool
 make %{?_smp_mflags} V=1
 
 
@@ -267,6 +269,10 @@ fi
 
 
 %changelog
+* Sun Dec 11 2016 Jajauma's Packages <jajauma@yandex.ru> - 1.16.1-1
+- Update to latest upstream release
+- Rebuilt for altarch
+
 * Tue Sep 27 2016 Jajauma's Packages <jajauma@yandex.ru> - 1.16.0-1
 - Update to latest upstream release
 
